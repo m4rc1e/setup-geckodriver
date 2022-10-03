@@ -10,7 +10,7 @@ type GitHubReleaseApiResponse = {
 };
 
 const getLatestVersion = async (): Promise<string> => {
-  const githubToken = core.getInput("GITHUB_TOKEN");
+  const githubToken = core.getInput("github-token");
   const apiURL = `https://api.github.com/repos/mozilla/geckodriver/releases/latest`;
   const http = new httpm.HttpClient("setup-geckodrive", [], {
     headers: {

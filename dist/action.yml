@@ -4,9 +4,6 @@ author: "Shin'ya Ueoka"
 inputs:
   geckodriver-version:
     description: 'The Geckodriver version to install and use. Examples: 0.28.0, latest.'
-  github-token:
-    description: 'github token'
-    default: ${{ github.token }}
 
 runs:
   using: 'node12'

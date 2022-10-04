@@ -5087,9 +5087,9 @@ const InstallerFactory_1 = __importDefault(__webpack_require__(892));
 const getLatestVersion = () => __awaiter(void 0, void 0, void 0, function* () {
     const githubToken = core.getInput("github-token");
     const apiURL = `https://api.github.com/repos/mozilla/geckodriver/releases/latest`;
-    const http = new httpm.HttpClient("setup-geckodrive", [], {}); // {
-    //    headers: {"authorization": `bearer {githubToken}`}
-    //  })
+    const http = new httpm.HttpClient("setup-geckodrive", [], {
+        headers: { "authorization": `bearer {githubToken}` }
+    });
     const resp = yield http.getJson(apiURL);
     if (resp.statusCode !== httpm.HttpCodes.OK) {
         throw new Error(`Failed to get latest version: server returns ${resp.statusCode}`);
